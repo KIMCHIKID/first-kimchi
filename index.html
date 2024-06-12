@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김효종 졸업작품1</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(216, 153, 200);
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            width: 50%;
+        }
+        .background {
+            width: 100%;
+            display: block;
+        }
+        .foreground {
+            position: absolute;
+            top: 48%;
+            left: 30%;
+            width: 20%;
+            transition: transform 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="background" src="/mnt/data/image 753.png" alt="Gorilla Background">
+        <img id="nose" class="foreground" src="/mnt/data/레이어 2.png" alt="Gorilla Nose">
+    </div>
+
+    <script>
+        const nose = document.getElementById('nose');
+        let growing = true;
+
+        setInterval(() => {
+            if (growing) {
+                nose.style.transform = 'scale(1.15)';
+            } else {
+                nose.style.transform = 'scale(1)';
+            }
+            growing = !growing;
+        }, 700); // 1초마다 확대/축소
+    </script>
+</body>
+</html>
